@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pro Pre-Calc Reference</title>
+    <link rel="stylesheet" href="home.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+
+    <nav class="navbar">
+        <div class="logo"><i class="fas fa-function"></i> PreCalc<span>Pro</span></div>
+        <div class="search-wrapper">
+            <i class="fas fa-search"></i>
+            <input type="text" id="formulaSearch" placeholder="Search across all sections..." onkeyup="searchFormula()">
+        </div>
+    </nav>
+
+    <div class="container">
+        <aside class="sidebar">
+            <ul class="nav-menu">
+                <li class="active" onclick="filterCategory('all')"><i class="fas fa-th-large"></i> All Formulas</li>
+                <li onclick="filterCategory('algebra')"><i class="fas fa-superscript"></i> Algebra</li>
+                <li onclick="filterCategory('trig')"><i class="fas fa-chart-line"></i> Trigonometry</li>
+                <li onclick="filterCategory('log')"><i class="fas fa-square-root-alt"></i> Logarithms</li>
+                <li onclick="filterCategory('limits')"><i class="fas fa-infinity"></i> Limits & Derivatives</li>
+            </ul>
+        </aside>
+
+        <main class="content">
+            <header class="content-header">
+                <h2 id="sectionTitle">All Formulas</h2>
+                <p>Quick reference for advanced mathematical concepts.</p>
+            </header>
+
+            <div class="formula-grid" id="formulaGrid">
+                <div class="formula-card" data-category="algebra">
+                    <div class="card-tag">Algebra</div>
+                    <h3>Quadratic Formula</h3>
+                    <div class="math-display">x = \frac{-b \pm \sqrt{b^2 - 4ac}}{2a}</div>
+                    <p>Calculates the roots of $ax^2 + bx + c = 0$.</p>
+                </div>
+
+                <div class="formula-card" data-category="trig">
+                    <div class="card-tag">Trigonometry</div>
+                    <h3>Law of Sines</h3>
+                    <div class="math-display">\frac{a}{\sin A} = \frac{b}{\sin B} = \frac{c}{\sin C}</div>
+                    <p>Relates sides and angles of any triangle.</p>
+                </div>
+                
+
+[Image of Law of Sines diagram]
+
+
+                <div class="formula-card" data-category="trig">
+                    <div class="card-tag">Trigonometry</div>
+                    <h3>Double Angle (Sine)</h3>
+                    <div class="math-display">\sin(2\theta) = 2\sin\theta\cos\theta</div>
+                    <p>Identity for doubling the angle in sine functions.</p>
+                </div>
+
+                <div class="formula-card" data-category="log">
+                    <div class="card-tag">Logarithms</div>
+                    <h3>Change of Base</h3>
+                    <div class="math-display">\log_b(x) = \frac{\log_c(x)}{\log_c(b)}</div>
+                    <p>Converts a logarithm to a different base.</p>
+                </div>
+
+                <div class="formula-card" data-category="limits">
+                    <div class="card-tag">Limits</div>
+                    <h3>Power Rule</h3>
+                    <div class="math-display">\frac{d}{dx}[x^n] = nx^{n-1}</div>
+                    <p>Basic rule for finding derivatives of powers.</p>
+                </div>
+            </div>
+        </main>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
