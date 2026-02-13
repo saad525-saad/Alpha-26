@@ -1,0 +1,186 @@
+:root {
+    --primary: #2563eb;
+    --dark: #0f172a;
+    --light: #f8fafc;
+    --white: #ffffff;
+}
+
+body, html {
+    margin: 0;
+    font-family: 'Inter', sans-serif;
+    scroll-behavior: smooth;
+    background: var(--light);
+}
+
+.hidden { display: none; }
+
+.navbar {
+    background: var(--dark);
+    padding: 1rem 5%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    color: white;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+}
+
+.logo { font-size: 1.5rem; font-weight: bold; cursor: pointer; }
+.logo span { color: var(--primary); }
+.nav-links a { color: white; text-decoration: none; margin-left: 20px; }
+
+.hero-page {
+    height: 90vh;
+    background: linear-gradient(rgba(15, 23, 42, 0.8), rgba(15, 23, 42, 0.8)), url('https://images.unsplash.com/photo-1509228468518-180dd482180c?auto=format&fit=crop&w=1350&q=80');
+    background-size: cover;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    color: white;
+}
+
+.hero-content h1 { font-size: 3.5rem; margin-bottom: 1rem; }
+.btn-primary {
+    background: var(--primary);
+    color: white;
+    border: none;
+    padding: 15px 30px;
+    font-size: 1.1rem;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.app-container { display: flex; height: calc(100vh - 70px); }
+
+.sidebar { width: 250px; background: white; border-right: 1px solid #ddd; padding: 20px; }
+.search-box input { width: 100%; padding: 10px; border-radius: 5px; border: 1px solid #ddd; }
+
+.nav-menu { list-style: none; padding: 0; margin-top: 20px; }
+.nav-menu li { padding: 12px; cursor: pointer; border-radius: 5px; margin-bottom: 5px; }
+.nav-menu li.active, .nav-menu li:hover { background: var(--primary); color: white; }
+
+.content { flex: 1; padding: 30px; overflow-y: auto; }
+.formula-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(280px, 1fr)); gap: 20px; }
+
+.formula-card {
+    background: white;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.05);
+    cursor: pointer;
+    transition: 0.3s;
+    border: 1px solid transparent;
+}
+
+.formula-card:hover { 
+    border-color: var(--primary); 
+    transform: translateY(-5px); 
+}
+
+.tag { 
+    font-size: 0.7rem; 
+    background: #e0e7ff; 
+    color: var(--primary); padding: 3px 8px; border-radius: 4px; 
+}
+
+.math-box { 
+    background: #f1f5f9; 
+    padding: 15px; 
+    margin: 15px 0; 
+    text-align: center; 
+    font-weight: bold; 
+    border-radius: 5px; 
+}
+
+.modal { 
+    display: none; 
+    position: fixed; 
+    z-index: 2000; 
+    left: 0; 
+    top: 0; 
+    width: 100%; 
+    height: 100%; 
+    background: rgba(0,0,0,0.6); 
+}
+
+.modal-content { 
+    background: white; 
+    margin: 10% auto; 
+    padding: 30px; 
+    width: 50%; 
+    border-radius: 10px; 
+    position: relative; 
+}
+
+.close { 
+    position: absolute; 
+    right: 20px; 
+    top: 10px; 
+    font-size: 28px; 
+    cursor: pointer; 
+}
+
+
+.hero-page {
+    position: relative;
+    height: 90vh;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    color: white;
+    overflow: hidden;
+}
+
+.slideshow-container {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: -1;
+}
+
+.slide {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background-size: cover;
+    background-position: center;
+    opacity: 0;
+    animation: slideAnimation 15s infinite;
+}
+
+/* Har photo ki timing alag rakhi hai taake ek ke baad ek aaye */
+.slide:nth-child(1) { animation-delay: 0s; }
+.slide:nth-child(2) { animation-delay: 5s; }
+.slide:nth-child(3) { animation-delay: 10s; }
+
+@keyframes slideAnimation {
+    0% { opacity: 0; transform: scale(1); }
+    10% { opacity: 1; }
+    33% { opacity: 1; }
+    43% { opacity: 0; transform: scale(1.1); }
+    100% { opacity: 0; }
+}
+
+.hero-content {
+    z-index: 1;
+    max-width: 800px;
+    padding: 20px;
+}
+
+.hero-content h1 {
+    font-size: 3.5rem;
+    margin-bottom: 1.5rem;
+    text-shadow: 2px 2px 10px rgba(0,0,0,0.5);
+}
+
+.hero-content p {
+    font-size: 1.2rem;
+    margin-bottom: 2rem;
+}

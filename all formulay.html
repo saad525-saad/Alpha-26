@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PreCalc Pro | Master Your Math</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+
+    <nav class="navbar">
+        <div class="logo" onclick="showSection('home')">PreCalc<span>Pro</span></div>
+        <div class="nav-links">
+            <a href="javascript:void(0)" onclick="showSection('home')">Home</a>
+            <a href="javascript:void(0)" onclick="showSection('formulas-page')">Formulas</a>
+        </div>
+    </nav>
+
+    <section id="home" class="hero-page">
+        <div class="hero-content">
+            <h1>Master Pre-Calculus Faster</h1>
+            <p>Access a comprehensive library of formulas with solved examples to boost your grades.</p>
+            <button class="btn-primary" onclick="showSection('formulas-page')">Browse Formulas <i class="fas fa-arrow-right"></i></button>
+        </div>
+    </section>
+
+    <section id="formulas-page" class="hidden">
+        <div class="app-container">
+            <aside class="sidebar">
+                <div class="search-box">
+                    <input type="text" id="formulaSearch" placeholder="Search formulas..." onkeyup="searchFormula()">
+                </div>
+                <ul class="nav-menu">
+                    <li class="active" onclick="filterCategory('all')"><i class="fas fa-th-large"></i> All</li>
+                    <li onclick="filterCategory('algebra')">Algebra</li>
+                    <li onclick="filterCategory('trig')">Trigonometry</li>
+                    <li onclick="filterCategory('limits')">Limits</li>
+                </ul>
+            </aside>
+
+            <main class="content">
+                <div class="formula-grid" id="formulaGrid">
+                    <div class="formula-card" data-category="algebra" onclick="openExample('quad')">
+                        <span class="tag">Algebra</span>
+                        <h3>Quadratic Formula</h3>
+                        <div class="math-box">x = [-b ± √(b² - 4ac)] / 2a</div>
+                        <small>Click to see example</small>
+                    </div>
+
+                    <div class="formula-card" data-category="trig" onclick="openExample('pyth')">
+                        <span class="tag">Trigonometry</span>
+                        <h3>Pythagorean Identity</h3>
+                        <div class="math-box">sin²θ + cos²θ = 1</div>
+                        <small>Click to see example</small>
+                    </div>
+                </div>
+            </main>
+        </div>
+    </section>
+
+    <div id="exampleModal" class="modal">
+        <div class="modal-content">
+            <span class="close" onclick="closeModal()">&times;</span>
+            <h2 id="modalTitle">Example</h2>
+            <div id="modalBody"></div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+
+    
+</body>
+</html>
