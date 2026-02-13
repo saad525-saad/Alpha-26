@@ -1,0 +1,134 @@
+
+index.html
+UniSolve
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>UniSolve - AI Academic Companion</title>
+    <meta name="description" content="University-Level AI Problem Solver. Instant, step-by-step academic solutions.">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+    <header class="main-header">
+        <div class="container">
+            <div class="logo">
+                <i class="fa-solid fa-graduation-cap"></i>
+                <span>UniSolve</span>
+            </div>
+            <button id="theme-toggle" class="icon-btn" aria-label="Toggle Dark Mode">
+                <i class="fa-solid fa-moon"></i>
+            </button>
+        </div>
+    </header>
+    <main>
+        <section class="hero-section">
+            <div class="container">
+                <h1>Your AI Academic Companion</h1>
+                <p class="tagline">Master complex university problems with step-by-step AI solutions.</p>
+                <button class="btn btn-primary" onclick="document.getElementById('input-section').scrollIntoView({behavior: 'smooth'})">Solve My Problem</button>
+            </div>
+        </section>
+        <section id="input-section" class="input-section">
+            <div class="container">
+                <div class="card input-card">
+                    <div class="form-group">
+                        <label for="subject-select">Subject</label>
+                        <select id="subject-select">
+                            <option value="math">Mathematics</option>
+                            <option value="cs">Computer Science</option>
+                            <option value="physics">Physics</option>
+                            <option value="chemistry">Chemistry</option>
+                            <option value="engineering">Engineering</option>
+                            <option value="business">Business</option>
+                        </select>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="difficulty-select">Difficulty Level</label>
+                        <select id="difficulty-select">
+                            <option value="undergrad">Undergraduate</option>
+                            <option value="grad">Graduate</option>
+                            <option value="phd">PhD / Research</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label for="problem-text">Problem Statement</label>
+                        <div class="textarea-wrapper">
+                            <textarea id="problem-text" placeholder="Paste your problem here..." rows="6"></textarea>
+                        </div>
+                    </div>
+                    <button id="solve-btn" class="btn btn-primary btn-block">
+                        <span class="btn-text">Solve Now</span>
+                        <div class="loader hidden"></div>
+                    </button>
+                </div>
+            </div>
+        </section>
+        <section id="response-section" class="response-section hidden">
+            <div class="container">
+                <div class="response-controls">
+                    <div class="toggle-group">
+                        <label class="switch">
+                            <input type="checkbox" id="step-toggle" checked>
+                            <span class="slider round"></span>
+                        </label>
+                        <span>Show Steps</span>
+                    </div>
+                    <button id="copy-btn" class="btn btn-secondary btn-sm" title="Copy to Clipboard">
+                        <i class="fa-regular fa-copy"></i> Copy
+                    </button>
+                </div>
+                <div class="results-grid">
+                    <div class="card result-card final-answer-card">
+                        <h3><i class="fa-solid fa-check-circle"></i> Final Answer</h3>
+                        <div id="final-answer-content" class="content-box highlight"></div>
+                    </div>
+                    <div class="card result-card analysis-card">
+                        <h3><i class="fa-solid fa-magnifying-glass"></i> Problem Analysis</h3>
+                        <div id="analysis-content" class="content-box"></div>
+                    </div>
+                    <div id="steps-container" class="card result-card steps-card">
+                        <h3><i class="fa-solid fa-list-ol"></i> Step-by-Step Solution</h3>
+                        <div id="steps-content" class="content-box"></div>
+                    </div>
+                    <div class="card result-card concepts-card">
+                        <h3><i class="fa-solid fa-lightbulb"></i> Key Concepts</h3>
+                        <div id="concepts-content" class="content-box"></div>
+                    </div>
+                     <div class="card result-card confidence-card">
+                        <h3>Confidence Score</h3>
+                         <div class="confidence-meter">
+                            <div id="confidence-bar" class="confidence-fill"></div>
+                         </div>
+                         <div id="confidence-text"></div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        
+        <section id="history-section" class="history-section">
+            <div class="container">
+                <h2>Recent Problems</h2>
+                 <div id="history-list" class="history-list">
+                    <!-- History items will be injected here -->
+                    <p class="empty-history">No problems solved yet.</p>
+                 </div>
+            </div>
+        </section>
+    </main>
+    <footer class="main-footer">
+        <div class="container">
+            <p>&copy; 2026 UniSolve. All rights reserved.</p>
+        </div>
+    </footer>
+    <script src="script.js"></script>
+</body>
+</html>
